@@ -1,5 +1,6 @@
 @extends('layouts.app') 
 @section('content')
+
 <div class="container">
     @foreach($errors->all() as $e)
      <div class="alert alert-danger">{{$e}}</div>

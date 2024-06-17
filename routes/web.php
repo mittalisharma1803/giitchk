@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryController; 
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +14,13 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-
-
-
-
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
-route::resource('/category',CategoryController::class);
+Route::resource('/product',ProductController::class);
+
+Route::resource('/category',CategoryController::class);
+Route::get('/product/{id}/upload',[App\Http\Controllers\ProductImageController::class, 'index']);
 
 Auth::routes();
 
